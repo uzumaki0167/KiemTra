@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<p style="color:red; font-weight: bold">Some Number</p>
+<div>
+	<input id="id1" type="number" required>
+</div>
+<p style="color:#750A0A" id="demo"></p>
+<p style="color:red;font-weight: bold">Some Number</p>
+<div>
+	<input id="id2" type="text" required>
+</div>
+<p style="color:#750A0A" id="demo1"></p>
+<p style="color:red; font-weight: bold">Some Number</p>
+<div>
+	<input id="id3" type="number" min="1000000" required>
+</div>
+<p style="color:#750A0A" id="demo2"></p>
+<div>
+	<button onclick="myFunction()">Submit</button>
+</div>
+
+
+
+
+<script>
+function myFunction() {
+	var inpObj = document.getElementById("id1");
+    if (inpObj.checkValidity() == false) {
+        document.getElementById("demo").innerHTML = "A number is require";
+    } else {
+        document.getElementById("demo").innerHTML = "Input OK";
+    }
+    var x, text;
+
+    x = document.getElementById("id2").value;
+
+    if (isNaN(x) || x / 10 && x % 10 == 0) {
+        text = "Input OK";
+    } else {
+        text = "The number should be divisible by 10";
+    }
+    document.getElementById("demo1").innerHTML = text;
+    
+    var inpObj = document.getElementById("id3");
+    if (inpObj.checkValidity() == false) {
+        document.getElementById("demo2").innerHTML = "A number should be at least 7 digits";
+    } else {
+        document.getElementById("demo2").innerHTML = "Input OK";
+    }
+} 
+</script>
+
+</body>
+</html>

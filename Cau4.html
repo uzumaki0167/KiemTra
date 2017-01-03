@@ -1,0 +1,26 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+		$(document).ready(function(){
+			$("#addRow").click(function(){
+				$("table").append("<tr><td>"+$("select").val()+"<td><td>"+$("#input1").val()+"<td><td>"+$("#input2").val()+"<td></tr>");
+			});
+		});
+	</script>
+<div>
+			<select>
+			  <option value="Email">Email</option>
+			  <option value="UserName">UserName</option>
+			</select>
+			<input type="text" id="input1">
+			<p style="display:inline">Comments</p>
+			<input type="text" id="input2">
+			<button id="addRow">Add Row</button>
+			<table>
+			</table>
+</div>
+</body>
+</html>
